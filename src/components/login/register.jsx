@@ -18,7 +18,7 @@ class Register extends Component {
   register = e => {
     e.preventDefault();
     // endpoint
-    const endPoint = process.env.REACT_APP_API + "/signup";
+    const endPoint = process.env.REACT_APP_API + "/users/signup";
     //make sure there is no eeroor;
     if (validateForm(this.state.errors)) {
       axios({
@@ -38,13 +38,12 @@ class Register extends Component {
         })
         .catch(error => {
           toast.error("registration failed");
-          console.log(error.response);
-          // const errors = { ...this.state.errors };
-          // errors.email = error.response.data.email;
-          // errors.name = error.response.data.name;
-          // errors.password = error.response.data.password;
+          const errors = { ...this.state.errors };
+          errors.email = error.response.data.email;
+          errors.name = error.response.data.name;
+          errors.password = error.response.data.password;
 
-          // this.setState({ errors });
+          this.setState({ errors });
         });
     } else {
       alert("form is invalid");
