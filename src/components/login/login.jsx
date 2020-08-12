@@ -18,7 +18,7 @@ class Login extends Component {
 
   login = e => {
     e.preventDefault();
-    const endPoint = process.env.API;
+    const endPoint = process.env.REACT_APP_API;
     // ("http://localhost:5000/api/users/login");
     // ajax request
     axios({
