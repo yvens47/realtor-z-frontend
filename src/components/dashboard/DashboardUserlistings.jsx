@@ -41,7 +41,8 @@ class UserListingsPage extends Component {
   uploadAvatar = e => {
     e.preventDefault();
     const user = JSON.parse(localStorage.getItem("jwt"));
-    const endPoint = `http://localhost:5000/api/users/${user.user.id}/upload`;
+    const endPoint =
+      `${process.env.REACT_APP_API}` + `/users/${user.user.id}/upload`;
 
     const formData = new FormData();
     formData.append("avatar", this.state.userImage);
