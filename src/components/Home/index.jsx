@@ -12,10 +12,9 @@ import list from "../../images/list.svg";
 import contact from "../../images/contact.svg";
 
 const HomePage = () => {
-
-  useEffect(() => {  
-   document.title="Find A new Home - Realtor-z"
-});
+  useEffect(() => {
+    document.title = "Find A new Home - Realtor-z";
+  });
   return (
     <Fragment>
       <div className="homepage-wrapper">
@@ -157,7 +156,7 @@ const HomePage = () => {
 
               <p className="text-center">
                 <footer class="blockquote-footer">
-                  Someone famous in{" "}
+                  lorem Y. Isum
                   <cite title="Source Title">Source Title</cite>
                 </footer>
               </p>
