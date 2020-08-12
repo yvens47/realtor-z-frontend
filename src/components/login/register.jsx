@@ -38,13 +38,13 @@ class Register extends Component {
         })
         .catch(error => {
           toast.error("registration failed");
+          console.log(error);
+          // const errors = { ...this.state.errors };
+          // errors.email = error.response.data.email;
+          // errors.name = error.response.data.name;
+          // errors.password = error.response.data.password;
 
-          const errors = { ...this.state.errors };
-          errors.email = error.response.data.email;
-          errors.name = error.response.data.name;
-          errors.password = error.response.data.password;
-
-          this.setState({ errors });
+          // this.setState({ errors });
         });
     } else {
       alert("form is invalid");
