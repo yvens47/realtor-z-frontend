@@ -38,7 +38,7 @@ class Register extends Component {
         })
         .catch(error => {
           toast.error("registration failed");
-          console.log(error);
+          console.log(error.response);
           // const errors = { ...this.state.errors };
           // errors.email = error.response.data.email;
           // errors.name = error.response.data.name;
