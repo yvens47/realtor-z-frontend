@@ -47,7 +47,7 @@ class Properties extends Component {
     });
 
     // get propeties
-    axios.get("http://localhost:5000/api/listings/").then(response => {
+    axios.get(`${process.env.REACT_APP_API}` + `/listings/`).then(response => {
       this.setState({ properties: response.data });
       this.props.dispatch(getListingsActionCreator(response.data));
     });
