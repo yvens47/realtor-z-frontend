@@ -5,14 +5,14 @@ import { Link } from "react-router-dom";
 import { deleteUserListingCreator } from "../../store/actions/userActionsCreator";
 import axios from "axios";
 import { connect } from "react-redux";
-import userReducer from "../../store/reducers/userReducer";
+//import userReducer from "../../store/reducers/userReducer";
 const UserListings = props => {
   const deleteListing = (e, listing) => {
     e.preventDefault();
     props.dispatch(deleteUserListingCreator(listing));
     // send request to server
     //users/dashboard/listings/delete/5eb82f23c2cb3a0875d471b9
-    http: axios
+    axios
       .delete(
         `http://localhost:5000/api/users/dashboard/listings/delete/${listing._id}`
       )

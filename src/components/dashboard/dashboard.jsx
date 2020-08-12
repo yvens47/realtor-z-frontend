@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 import UserListings from "./userlistings";
 import Modal from "react-bootstrap/Modal";

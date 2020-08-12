@@ -4,7 +4,7 @@ export default function ListingCard(props) {
   return (
     <div className="listing-card">
       <div className="listing-card-image">
-        <img src={props.image} />
+        <img src={props.image} alt="listing" />
       </div>
 
       <div className="listing-card-details">

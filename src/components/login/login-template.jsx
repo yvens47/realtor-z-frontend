@@ -1,6 +1,6 @@
 import React from "react";
-import { Children } from "react";
-import Footer from "../commons/footer";
+//import { Children } from "react";
+//import Footer from "../commons/footer";
 const LoginTemplate = props => {
   return (
     <>

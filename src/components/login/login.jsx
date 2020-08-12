@@ -6,7 +6,7 @@ import { withRouter } from "react-router-dom";
 
 import { connect } from "react-redux";
 import { getUserActionCreator } from "../../store/actions/userActionsCreator";
-import Footer from "../commons/footer";
+// import Footer from "../commons/footer";
 import LoginTemplate from "./login-template";
 
 class Login extends Component {

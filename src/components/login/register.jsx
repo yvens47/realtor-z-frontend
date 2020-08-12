@@ -5,7 +5,7 @@ import axios from "axios";
 import { validateForm } from "../../utils/validation";
 import { ToastContainer, toast } from "react-toastify";
 import * as EmailValidator from "email-validator";
-import Footer from "../commons/footer";
+// import Footer from "../commons/footer";
 
 import LoginTemplate from "./login-template";
 import { withRouter } from "react-router-dom";

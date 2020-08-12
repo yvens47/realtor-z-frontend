@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import axios from "axios";
-import { render } from "timeago.js";
+// import { render } from "timeago.js";
 import { Redirect, withRouter } from "react-router-dom";
 import ImagePreview from "./imagePreview";
 import { ProgressBar } from "react-bootstrap";
@@ -69,7 +69,7 @@ class PropertyPicsUpload extends Component {
     if (this.state.notfound) {
       return <Redirect to="/properties" />;
     }
-    const { property } = this.state.property ? this.state : {};
+    // const { property } = this.state.property ? this.state : {};
     return (
       <div className="homepage-wrapper">
         <div className="container">

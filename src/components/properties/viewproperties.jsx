@@ -2,17 +2,16 @@ import React, { Component } from "react";
 import SlideShow from "../commons/slideshow";
 
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 
 import ScrollableTabsButtonForce from "../commons/Tab";
 import Footer from "../commons/footer";
 import axios from "axios";
-import Map from "../commons/map";
-import { render } from "timeago.js";
+// import Map from "../commons/map";
+// import { render } from "timeago.js";
 import NumberFormat from "react-number-format";
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 class ViewProperty extends Component {
   state = {
     property: {},
@@ -46,7 +45,7 @@ class ViewProperty extends Component {
       speed: 500,
       slidesToShow: 2,
       slidesToScroll: 3,
-      arrows:true,
+      arrows: true,
       responsive: [
         {
           breakpoint: 1024,
@@ -79,9 +78,9 @@ class ViewProperty extends Component {
       return <Redirect to="/properties" />;
     }
     const { property } = this.state.property ? this.state : {};
-  
+
     return (
-      <div className="homepage-wrapper mb-3" style={{background:"#f0f1f0"}}>
+      <div className="homepage-wrapper mb-3" style={{ background: "#f0f1f0" }}>
         <div className="container">
           <div className="row pt-5">
             <div className="col-md-8 pt-3">
@@ -140,46 +139,40 @@ class ViewProperty extends Component {
                 </div>
                 <h2>Other Property you might like</h2>
                 <div className="similar-property">
-                   <Slider {...settings}>
-                   
-                  {this.state.similar.map(property => (
-                   <>
-                  
-
-                   <div class="listing-card">
-                       <div class="listing-card-image">
-                        <img
-                          src={`http://localhost:5000/uploads/${property.photos &&
-                            property.photos[0]}`}
-                          class="card-img-top"
-                          alt="..."
-                        />
-                      </div>
-                      <div class="listing-card-details">
-                        <p class="card-text">{`${property.address.street},  ${property.address.city} ${property.address.state}`}</p>
-                        <h5 class="card-title">
-                        <NumberFormat
-                        value={property.price}
-                        displayType={"text"}
-                        thousandSeparator={true}
-                        prefix={"$"}
-                        renderText={value => <div>{value}</div>}
-                      />
-                        
-                       </h5>
-                        <a
-                          href={`/properties/${property._id}`}
-                          class="btn btn-secondary"
-                        >
-                          View
-                        </a>
-                      </div>
-                    </div>
-                    </>
-                  
-                   
-                  ))}
-                   </Slider>
+                  <Slider {...settings}>
+                    {this.state.similar.map(property => (
+                      <>
+                        <div class="listing-card">
+                          <div class="listing-card-image">
+                            <img
+                              src={`http://localhost:5000/uploads/${property.photos &&
+                                property.photos[0]}`}
+                              class="card-img-top"
+                              alt="..."
+                            />
+                          </div>
+                          <div class="listing-card-details">
+                            <p class="card-text">{`${property.address.street},  ${property.address.city} ${property.address.state}`}</p>
+                            <h5 class="card-title">
+                              <NumberFormat
+                                value={property.price}
+                                displayType={"text"}
+                                thousandSeparator={true}
+                                prefix={"$"}
+                                renderText={value => <div>{value}</div>}
+                              />
+                            </h5>
+                            <a
+                              href={`/properties/${property._id}`}
+                              class="btn btn-secondary"
+                            >
+                              View
+                            </a>
+                          </div>
+                        </div>
+                      </>
+                    ))}
+                  </Slider>
                 </div>
               </div>
             </div>

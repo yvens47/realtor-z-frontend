@@ -7,7 +7,7 @@ import Modal from "react-bootstrap/Modal";
 import { connect } from "react-redux";
 import "fontawesome/index";
 import axios from "axios";
-import { getUserListingsCreator } from "../../store/actions/userActionsCreator";
+// import { getUserListingsCreator } from "../../store/actions/userActionsCreator";
 import { getUserActionCreator } from "../../store/actions/userActionsCreator";
 import DashboardSidebar from "./dashboardSidebar";
 

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import DropDownMenuButton from "./drop-down-menu";
 const DropDownButton = props => {
   return (

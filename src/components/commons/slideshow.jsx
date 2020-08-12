@@ -1,6 +1,6 @@
 import React from "react";
 import SlideShowItem from "./slide-item";
-import { Map } from "react-leaflet";
+//import { Map } from "react-leaflet";
 const SlideShow = props => {
   return (
     <div

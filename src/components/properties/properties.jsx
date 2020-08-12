@@ -11,15 +11,15 @@ import { connect } from "react-redux";
 import getListingsActionCreator from "../../store/actions/listingActionsCreator";
 
 import Map from "../commons/map";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Footer from "../commons/footer";
 
 import { paginate } from "../../utils/paginate";
 
-import { log } from "util";
+// import { log } from "util";
 import Pagination from "../commons/pagination";
 import DropDownButton from "../commons/drop-down-button";
-import DropDownMenuButton from "../commons/drop-down-menu";
+// import DropDownMenuButton from "../commons/drop-down-menu";
 
 class Properties extends Component {
   state = {

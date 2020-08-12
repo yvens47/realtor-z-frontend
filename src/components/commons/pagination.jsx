@@ -19,7 +19,7 @@ const Pagination = props => {
         {pages.map(page => (
           <li
             className={
-              props.currentPage == page ? "page-item active" : "page-item"
+              props.currentPage === page ? "page-item active" : "page-item"
             }
             key={page}
           >
