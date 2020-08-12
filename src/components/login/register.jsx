@@ -18,7 +18,7 @@ class Register extends Component {
   register = e => {
     e.preventDefault();
     // endpoint
-    const endPoint = "http://localhost:5000/api/users/signup";
+    const endPoint = process.env.REACT_APP_API;
     //make sure there is no eeroor;
     if (validateForm(this.state.errors)) {
       axios({

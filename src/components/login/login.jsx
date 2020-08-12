@@ -21,6 +21,7 @@ class Login extends Component {
     const endPoint = process.env.REACT_APP_API;
     // ("http://localhost:5000/api/users/login");
     // ajax request
+    console.log(endPoint);
     axios({
       method: "post",
       url: endPoint,
