@@ -18,7 +18,8 @@ class Login extends Component {
 
   login = e => {
     e.preventDefault();
-    const endPoint = "http://localhost:5000/api/users/login";
+    const endPoint = process.env.API;
+    // ("http://localhost:5000/api/users/login");
     // ajax request
     axios({
       method: "post",
