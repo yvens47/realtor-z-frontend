@@ -5,7 +5,7 @@ const RegisterForm = props => {
       <label htmlFor="name" className="sr-only">
         Full Name
       </label>
-      <input
+      {/* <input
         onChange={props.change}
         type="text"
         id="name"
@@ -15,7 +15,7 @@ const RegisterForm = props => {
       />
       {props.error.name.length > 0 && (
         <div className="alert alert-danger">{props.error.name}</div>
-      )}
+      )} */}
       {/* <label htmlFor="Phone" className="sr-only">
         Phone
       </label>
@@ -58,7 +58,6 @@ const RegisterForm = props => {
         <div className="alert alert-danger">{props.error.password}</div>
       )}
 
-     
       <button
         className="btn btn-lg btn-secondary btn-block rounded-0"
         type="submit"
