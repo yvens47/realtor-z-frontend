@@ -61,7 +61,10 @@ class EditProperty extends Component {
     // axios request
     console.log(data);
     axios
-      .put(`http://localhost:5000/api/listings/update/${listingId}`, data)
+      .put(
+        `${process.env.REACT_APP_API}` + `/listings/update/${listingId}`,
+        data
+      )
       .then(response => this.setState({ editSuccess: true }))
       .catch(error => console.log(error));
   };
