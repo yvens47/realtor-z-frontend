@@ -47,7 +47,7 @@ class PropertyPicsUpload extends Component {
             this.props.history.push("/dashboard");
           }
         })
-        .catch(e => console.log(e));
+        .catch(e => console.log(e.response));
     } else {
       toast("you must choose a photo");
     }
