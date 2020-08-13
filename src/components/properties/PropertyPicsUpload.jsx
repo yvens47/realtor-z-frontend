@@ -27,7 +27,7 @@ class PropertyPicsUpload extends Component {
       // ajax request
       axios({
         method: "post",
-        url: `${process.env.REACT_APP_API}` +`listings/upload/${id}`,
+        url: `${process.env.REACT_APP_API}` + `/listings/upload/${id}`,
         data: formData,
         onUploadProgress: progressEvent => {
           const { loaded, total } = progressEvent;
