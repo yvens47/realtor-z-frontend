@@ -47,10 +47,12 @@ class Properties extends Component {
     });
 
     // get propeties
-    axios.get(`${process.env.REACT_APP_API}` + `/listings/`).then(response => {
-      this.setState({ properties: response.data });
-      this.props.dispatch(getListingsActionCreator(response.data));
-    });
+    axios
+      .get(`${process.env.REACT_APP_BASE_API}` + `/listings/`)
+      .then(response => {
+        this.setState({ properties: response.data });
+        this.props.dispatch(getListingsActionCreator(response.data));
+      });
   };
 
   previous = () => {

@@ -21,7 +21,7 @@ class ViewProperty extends Component {
   componentDidMount = () => {
     const { id } = this.props.match.params;
     axios
-      .get(`http://localhost:5000/api/listings/${id}`)
+      .get(`${process.env.REACT_APP_BASE_API}` + `/listings/${id}`)
       .then(response => {
         if (response.data.error) {
           this.setState({

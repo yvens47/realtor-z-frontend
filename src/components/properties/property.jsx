@@ -4,6 +4,7 @@ import Skeleton from "@material-ui/lab/Skeleton";
 
 const Property = props => {
   const { listing } = props;
+  console.log(listing);
 
   return (
     <div className="property-list-list ">
@@ -15,8 +16,7 @@ const Property = props => {
         >
           {listing.photos ? (
             <img
-              src={`http://localhost:5000/uploads/${listing.photos &&
-                listing.photos[0]}`}
+              src={`https://${listing.photos && listing.photos[0]}`}
               className="card-img"
               alt="..."
             />
@@ -52,7 +52,6 @@ const Property = props => {
             {listing.address && listing.address.city + " "},
             {listing.address && listing.address.state + " ,"}
             {listing.address && listing.address.zip}
-            
           </p>
         </div>
         <div className="contact-block">
