@@ -78,7 +78,7 @@ class EditProperty extends Component {
     // get a listing from the server
     const id = this.props.match.params.id;
     axios
-      .get(`http://localhost:5000/api/listings/${id}`)
+      .get(`${process.env.REACT_APP_API}` + `listings/${id}`)
       .then(response => {
         const property = {
           ...this.state.property,
