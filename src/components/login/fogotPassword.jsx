@@ -14,7 +14,7 @@ class ForgotPassword extends Component {
     // make request to backend and process result;
     axios({
       method: "post",
-      url: `${process.env.REACT_APP_API}`+/users/forgot-password",
+      url: `${process.env.REACT_APP_API}` + "/users/forgot-password",
       data: account
     }).then(response => {
       toast(response.data.message);
