@@ -78,8 +78,9 @@ class EditProperty extends Component {
     // get a listing from the server
     const id = this.props.match.params.id;
     axios
-      .get(`${process.env.REACT_APP_API}` + `listings/${id}`)
+      .get(`${process.env.REACT_APP_API}` + `/listings/${id}`)
       .then(response => {
+        console.log(response);
         const property = {
           ...this.state.property,
           street: response.data.data.address.street,
