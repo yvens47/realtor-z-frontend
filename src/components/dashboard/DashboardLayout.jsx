@@ -24,7 +24,7 @@ class DashBoardLayout extends Component {
     const user = JSON.parse(localStorage.getItem("jwt"));
     this.props.dispatch(getUserActionCreator(user));
 
-    axios(`http://localhost:5000/api/users/dashboard/${user.user.id}`)
+    axios(`${process.env.REACT_APP_API}/users/dashboard/${user.user.id}`)
       .then(response => {
         this.setState({ listings: response.data });
         this.props.dispatch(getUserListingsCreator(response.data));
@@ -43,7 +43,7 @@ class DashBoardLayout extends Component {
   uploadAvatar = e => {
     e.preventDefault();
     const user = JSON.parse(localStorage.getItem("jwt"));
-    const endPoint = `http://localhost:5000/api/users/${user.user.id}/upload`;
+    const endPoint = `${process.env.REACT_APP_API}/users/${user.user.id}/upload`;
 
     const formData = new FormData();
     formData.append("avatar", this.state.userImage);

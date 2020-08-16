@@ -14,7 +14,7 @@ const UserListings = props => {
     //users/dashboard/listings/delete/5eb82f23c2cb3a0875d471b9
     axios
       .delete(
-        `http://localhost:5000/api/users/dashboard/listings/delete/${listing._id}`
+        `${process.env.REACT_APP_API}/users/dashboard/listings/delete/${listing._id}`
       )
       .then(response => {
         console.log(response);

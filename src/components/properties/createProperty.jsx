@@ -56,7 +56,7 @@ class CreateProperty extends Component {
 
     // axios request
     axios
-      .post("http://localhost:5000/api/listings/create", data)
+      .post(`${process.env.REACT_APP_API}` + "/listings/create", data)
       .then(response => {
         if (response.data.success) {
           this.props.history.push("/dashboard");
