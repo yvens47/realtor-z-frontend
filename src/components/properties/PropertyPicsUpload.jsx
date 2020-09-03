@@ -42,7 +42,7 @@ class PropertyPicsUpload extends Component {
       })
         .then(result => {
           console.log(result);
-          if (result.data.status === 200) {
+          if (result.status === 200) {
             // redirect to dashboard
             this.props.history.push("/dashboard");
           }

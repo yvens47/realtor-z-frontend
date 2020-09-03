@@ -16,7 +16,7 @@ const Property = props => {
         >
           {listing.photos ? (
             <img
-              src={`https://${listing.photos && listing.photos[0]}`}
+              src={`${listing.photos && listing.photos[0]}`}
               className="card-img"
               alt="..."
             />

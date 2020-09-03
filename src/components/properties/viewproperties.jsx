@@ -21,7 +21,7 @@ class ViewProperty extends Component {
   componentDidMount = () => {
     const { id } = this.props.match.params;
     axios
-      .get(`${process.env.REACT_APP_BASE_API}` + `/listings/${id}`)
+      .get(`${process.env.REACT_APP_API}` + `/listings/${id}`)
       .then(response => {
         if (response.data.error) {
           this.setState({
@@ -43,7 +43,7 @@ class ViewProperty extends Component {
       dots: true,
       infinite: true,
       speed: 500,
-      slidesToShow: 2,
+      slidesToShow: 3,
       slidesToScroll: 3,
       arrows: true,
       responsive: [
@@ -145,8 +145,7 @@ class ViewProperty extends Component {
                         <div class="listing-card">
                           <div class="listing-card-image">
                             <img
-                              src={`http://localhost:5000/uploads/${property.photos &&
-                                property.photos[0]}`}
+                              src={`${property.photos && property.photos[0]}`}
                               class="card-img-top"
                               alt="..."
                             />

@@ -20,18 +20,30 @@ h4 {
   bottom: 0;
 }
 
+input.form-control.mr-sm-2 {
+  transition: all 400ms ease;
+  width: 300px;
+}
+
+input.form-control.mr-sm-2:focus {
+  width: 500px;
+  background: #eee;
+}
+
 .footer p {
   font-family: "Montserrat", sans-serif;
 }
-.display-row-3 h1{
-   
-   transition: all 300ms ease-in;
+
+.display-row-3 h1 {
+
+  transition: all 300ms ease-in;
 
 }
-.display-row-3:hover h1{  
- 
-   color:#616060;
-  transform:scale(1.2);
+
+.display-row-3:hover h1 {
+
+  color: #616060;
+  transform: scale(1.2);
 }
 
 
@@ -504,25 +516,28 @@ li a:hover {
 .listing-card img {
   width: 100%;
 }
-.similar-property .listing-card{
-  width:100%;
+
+.similar-property .listing-card {
+  width: 100%;
 }
+
 .similar-property .listing-card:hover .listing-card-details {
-    background: #474f54;
-    display: block;
-    position: absolute;
-    width: 87.2%;
-    height: 87.5%;
-    top: 15px;
-    transition: all 300ms ease;
-    padding: 20px;
-    font-size: 30px;
-    color: white;
-  }
+  background: #474f54;
+  display: block;
+  position: absolute;
+  width: 87.2%;
+  height: 87.5%;
+  top: 15px;
+  transition: all 300ms ease;
+  padding: 20px;
+  font-size: 30px;
+  color: white;
+}
+
 .slick-slider.slick-initialized {
-   
-    width: 100%;
-    margin-bottom:70px;
+
+  width: 100%;
+  margin-bottom: 70px;
 }
 
 /* // Small devices (landscape phones, 576px and up) */
@@ -592,7 +607,7 @@ li a:hover {
     color: #7874ba;
   }
 
-.similar-property .listing-card:hover .listing-card-details {
+  .similar-property .listing-card:hover .listing-card-details {
     background: #474f54;
     display: block;
     position: absolute;
@@ -733,12 +748,13 @@ li a:hover {
   .about-company i {
     font-size: 50px;
   }
+
   .carousel-inner {
     position: relative;
     width: 100%;
     overflow: hidden;
     height: 280px;
-}
+  }
 }
 
 /* // Small devices (landscape phones, less than 768px) */
