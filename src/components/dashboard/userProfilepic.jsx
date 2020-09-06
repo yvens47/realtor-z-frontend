@@ -4,7 +4,7 @@ class UserProfilePic extends Component {
     const link = this.props.user
       ? this.props.user.user.picture === ""
         ? "https://beautycraftkitchens.com/wp-content/uploads/2017/02/dummy-user.png"
-        : `http://localhost:5000/uploads/${this.props.user.user.picture}`
+        : `${this.props.user.user.picture}`
       : "https://beautycraftkitchens.com/wp-content/uploads/2017/02/dummy-user.png";
 
     return (

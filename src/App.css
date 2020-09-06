@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+.nav-link li a {
+  color: #24a2b8;
+}
+
 body h1,
 h2,
 h3,
@@ -381,7 +385,7 @@ h1.address .street {
   list-style-type: none;
 }
 
-li a {
+.links li a {
   color: white;
   transition: color 0.2s;
 }

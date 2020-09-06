@@ -92,7 +92,9 @@ class UserListingsPage extends Component {
             <div className="col-md-10">
               <ToastContainer></ToastContainer>
               <div>
-                <h4 className="border-bottom p-1">Your Listings</h4>
+                <h4 className="border-bottom p-1">
+                  Your Listings
+                </h4>
               </div>
               <div className="row">
                 <div className="col-md-8">
