@@ -12,6 +12,7 @@ import axios from "axios";
 // import { render } from "timeago.js";
 import NumberFormat from "react-number-format";
 import { Redirect } from "react-router-dom";
+import Map from "../commons/map";
 class ViewProperty extends Component {
   state = {
     property: {},

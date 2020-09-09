@@ -2,6 +2,27 @@
   box-sizing: border-box;
 }
 
+.latest-listing-top {}
+
+.latest-listing {
+  position: relative;
+  width: 100%;
+  border: solid 1px #eee;
+  height: 117px;
+
+}
+
+.latest-listing-img {
+  position: absolute;
+  height: 105px;
+  width: 150px
+}
+
+.latest-listing-img img {
+  width: 100%;
+  height: 100%;
+}
+
 .nav-link li a {
   color: #24a2b8;
 }

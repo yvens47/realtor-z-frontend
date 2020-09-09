@@ -254,6 +254,7 @@ class EditProperty extends Component {
                           class="form-control"
                           id="exampleFormControlSelect1"
                         >
+                          <option default>status</option>
                           <option>Published</option>
                           <option selected>Unpublished</option>
                         </select>
