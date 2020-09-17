@@ -37,20 +37,24 @@ class Register extends Component {
           }
         })
         .catch(error => {
-          toast.error("registration failed");
-          const errors = { ...this.state.errors };
-          errors.email = error.response.data.email;
-          errors.name = error.response.data.name;
-          errors.password = error.response.data.password;
+          console.log("line 40", error.response.data.data);
+          toast.error("registration failed: " + `${error.response.data.data}`);
 
-          this.setState({ errors });
+          this.setState({ errors: error.response.data.data });
         });
     } else {
       alert("form is invalid");
     }
   };
+  handleFocus = ({ target }) => {
+    const { name, value } = target;
+    const _errors = { ...this.state.errors };
+    _errors.name = value === "" ? "Enter full Name" : "";
+    this.setState({ errors: _errors });
+  };
   handleChange = ({ target }) => {
     const { name, value } = target;
+
     const _account = { ...this.state.account };
     const _errors = { ...this.state.errors };
     switch (name) {
@@ -65,9 +69,9 @@ class Register extends Component {
       case "name":
         _errors.name = value === "" ? "Enter full Name" : "";
         break;
-      case "phone":
-        _errors.phone = value === "" ? "Enter your phone number" : "";
-        break;
+      // case "phone":
+      //   _errors.phone = value === "" ? "Enter your phone number" : "";
+      //   break;
 
       default:
         break;
@@ -86,7 +90,15 @@ class Register extends Component {
     //const { email, password } = this.state.errors;
     return (
       <LoginTemplate>
-        <ToastContainer />
+        <ToastContainer
+          position="top-right"
+          autoClose={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+        />
         <div className="col-md-4 m-auto pt-2">
           <h1 className="h3 mb-5 text-center font-weight-normal">Sign up</h1>
 
@@ -94,6 +106,7 @@ class Register extends Component {
             error={this.state.errors}
             onSend={this.register}
             change={this.handleChange}
+            focus={this.handleFocus}
           />
         </div>
       </LoginTemplate>

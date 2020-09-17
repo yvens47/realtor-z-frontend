@@ -7,13 +7,14 @@ const RegisterForm = props => {
       </label>
       <input
         onChange={props.change}
+        onFocus={props.focus}
         type="text"
         id="name"
         className="form-control  mb-2 rounded-0"
         placeholder="Full name"
         name="name"
       />
-      {props.error.name.length > 0 && (
+      {props.error.name && props.error.name.length > 0 && (
         <div className="alert alert-danger">{props.error.name}</div>
       )}
       {/* <label htmlFor="Phone" className="sr-only">
@@ -39,7 +40,7 @@ const RegisterForm = props => {
         required=""
         name="email"
       />
-      {props.error.email.length > 0 && (
+      {props.error.email && props.error.email.length > 0 && (
         <div className="alert alert-danger">{props.error.email}</div>
       )}
       <label htmlFor="inputPassword" className="sr-only">
@@ -54,7 +55,7 @@ const RegisterForm = props => {
         required=""
         name="password"
       />
-      {props.error.password.length > 0 && (
+      {props.error.password && props.error.password.length > 0 && (
         <div className="alert alert-danger">{props.error.password}</div>
       )}
 

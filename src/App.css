@@ -45,6 +45,49 @@ h4 {
   bottom: 0;
 }
 
+/* Map */
+.windowImage {
+  position: relative;
+}
+
+.windowImage p {
+
+  color: #444;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  border: solid 1px #eee;
+  background: white;
+  width: auto;
+  padding: 5px;
+  font-size: 18px;
+  font-weight: bold;
+
+}
+
+.window-details {
+
+  font-size: 18px;
+  color: #444;
+}
+
+.window-address {
+  color: #555;
+  font-size: 16px;
+  font-weight: bold;
+
+  color: #444;
+
+}
+
+.window-address span {
+  color: #555;
+  font-weight: normal;
+
+}
+
+
+/* map ends here */
 input.form-control.mr-sm-2 {
   transition: all 400ms ease;
   width: 300px;

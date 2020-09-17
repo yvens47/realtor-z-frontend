@@ -4,8 +4,6 @@ import Skeleton from "@material-ui/lab/Skeleton";
 
 const Property = props => {
   const { listing } = props;
-  console.log(listing);
-
   return (
     <div className="property-list-list ">
       <div className="property-list-image-wrapper">
