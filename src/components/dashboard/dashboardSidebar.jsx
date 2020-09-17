@@ -22,16 +22,16 @@ const DashboardSidebar = props => {
             <i className="fas fa-list-ul"></i> Listings
           </Link>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <Link className="nav-link" to="#">
             Link
           </Link>
-        </li>
-        <li className="nav-item">
+        </li> */}
+        {/* <li className="nav-item">
           <Link className="nav-link" to="#">
             Link
           </Link>
-        </li>
+        </li> */}
       </ul>
     </div>
   );

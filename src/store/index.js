@@ -1,10 +1,14 @@
-import { createStore, combineReducers } from "redux";
-
+import {
+  createStore,
+  combineReducers
+} from "redux";
 import userReducer from "./reducers/userReducer";
 import listingReducer from "./reducers/listingReducers";
 
 const initialStates = {
-  listing: { data: ["hello world"] }
+  listing: {
+    data: ["hello world"]
+  }
 };
 
 const store = createStore(

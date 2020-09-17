@@ -3,14 +3,15 @@ import { ToastContainer } from "react-toastify";
 
 import UserListings from "./userlistings";
 import Modal from "react-bootstrap/Modal";
-import IconButton from "@material-ui/core/IconButton";
 import MailIcon from "@material-ui/icons/Mail";
-import Badge from "@material-ui/core/Badge";
+import SubscriptionsIcon from "@material-ui/icons/Subscriptions";
 
 import { connect } from "react-redux";
 import "fontawesome/index";
 import axios from "axios";
 import { getUserListingsCreator } from "../../store/actions/userActionsCreator";
+import { getUserListingsPieDataCreator } from "../../store/actions/userActionsCreator";
+
 import { getUserActionCreator } from "../../store/actions/userActionsCreator";
 
 // import UserProfilePic from "./userProfilepic";
@@ -118,6 +119,11 @@ class DashBoard extends Component {
       .then(response => {
         this.setState({ listings: response.data });
         this.props.dispatch(getUserListingsCreator(response.data));
+        this.props.dispatch(
+          getUserListingsPieDataCreator({
+            type: "GET_USER_LISTINGS_PIE_DATA"
+          })
+        );
       })
       .catch(function(error) {
         console.log(error);
@@ -176,6 +182,7 @@ class DashBoard extends Component {
   };
 
   render() {
+    const pieData = this.props.user.pieData && this.props.user.pieData;
     return (
       <React.Fragment>
         <div className="homepage-wrapper">
@@ -189,6 +196,7 @@ class DashBoard extends Component {
               </div>
               <div className="col-md-10">
                 <ToastContainer></ToastContainer>
+
                 <div>
                   <h4 className="border-top border-bottom p-1">Dashboard</h4>
                 </div>
@@ -200,11 +208,6 @@ class DashBoard extends Component {
                         style={{ maxWidth: "100%", height: "100%" }}
                       >
                         <div className="row no-gutters">
-                          {/* <div className="col-md-4">
-                            <div className="paper">
-                              <i className="fas fa-sticky-note fa-2x"></i>
-                            </div>
-                          </div> */}
                           <div className="col-md-12">
                             <div className="card-body">
                               <Pie
@@ -224,7 +227,14 @@ class DashBoard extends Component {
                                 data={{
                                   datasets: [
                                     {
-                                      data: [3, 2, 1],
+                                      data: [
+                                        this.props.user.pieData &&
+                                          this.props.user.pieData.Published,
+                                        this.props.user.pieData &&
+                                          this.props.user.pieData.Unpublished,
+                                        this.props.user.pieData &&
+                                          this.props.user.pieData.Draft
+                                      ],
                                       backgroundColor: [
                                         "#dc3545",
                                         "#6c757c",
@@ -233,8 +243,7 @@ class DashBoard extends Component {
                                     }
                                   ],
 
-                                  // These labels appear in the legend and in the tooltips when hovering different arcs
-                                  labels: ["Published", "Unplished", "Draft"]
+                                  labels: ["Published", "Unpublished", "Draft"]
                                 }}
                                 legend={{ position: "right", display: true }}
                               />
@@ -308,13 +317,15 @@ class DashBoard extends Component {
                     </div>
                     {/* <UserListings userListings={this.props.user.listings} /> */}
                     {this.props.user.listings &&
-                      this.props.user.listings.map(listing => (
-                        <div className="latest-listing p-1">
-                          <div className="latest-listing-img">
-                            <img src={listing.photos[0]} />
+                      this.props.user.listings
+                        .slice(this.props.user.listings.length - 1)
+                        .map(listing => (
+                          <div className="latest-listing p-1">
+                            <div className="latest-listing-img">
+                              <img src={listing.photos[0]} />
+                            </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
                   </div>
 
                   <div className="col-md-3">
@@ -322,15 +333,24 @@ class DashBoard extends Component {
                       style={{ height: "167px" }}
                       className="card  rounded-0 p-2"
                     >
-                      <img
+                      {/* <img
                         style={{
                           width: "60%",
                           height: "60%",
                           margin: "0 auto"
                         }}
                         src={subscription}
+                      /> */}
+
+                      <SubscriptionsIcon
+                        style={{
+                          color: "#6c757d",
+                          fontSize: 70,
+                          margin: "0  auto 5px"
+                        }}
                       />
-                      <h4 className="text-center mt-1">Subscriptions</h4>
+
+                      <h4 className="text-center mt-2">Expire in: 20 Days </h4>
                     </div>
                   </div>
 
@@ -339,25 +359,24 @@ class DashBoard extends Component {
                       style={{ height: "167px" }}
                       className="card  rounded-0 p-2"
                     >
-                      <img
+                      {/* <img
                         style={{
                           width: "60%",
                           height: "60%",
                           margin: "0 auto"
                         }}
                         src={mailbox}
+                      /> */}
+
+                      <MailIcon
+                        style={{
+                          color: "#6c757d",
+                          fontSize: 70,
+                          margin: "0  auto 5px"
+                        }}
                       />
-                      <h4 className="text-center">
-                        You've Got mail{" "}
-                        <IconButton
-                          aria-label="show 4 new mails"
-                          color="inherit"
-                        >
-                          <Badge badgeContent={4} color="secondary">
-                            <MailIcon />
-                          </Badge>
-                        </IconButton>
-                      </h4>
+
+                      <h4 className="text-center">You've Got mail </h4>
                     </div>
                   </div>
                 </div>
